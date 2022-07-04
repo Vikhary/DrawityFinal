@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { products } from '../../data/products';
+import { useSelector } from 'react-redux';
 import { styles } from "./styles";
 
 const ProductDetailsScreen = ({route}) => {
-  const {productId} = route.params;
-  const product = products.find((product) => product.id === productId);
+  const product = useSelector(state => state.product.selected);
+  const { productId } = route.params;
     return (
         <View style = {styles.container} >
           <View style = {styles.details}>
-        <Text style = {styles.text}> id: {product.id} </Text>
+        <Text style = {styles.text}>id: {product.id} </Text>
         <Text style = {styles.text}>{product.name} </Text>
         <Text style = {styles.text}>{product.description} </Text>
         <Text style = {styles.text}>{product.weight} </Text>
