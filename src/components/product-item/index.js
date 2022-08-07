@@ -14,7 +14,7 @@ const ProductItem = ({ item, onSelected }) => {
           </View>
           <View>
             <Text style={styles.detail}>${item.price.toFixed(2)}</Text>
-            <Text style={styles.detail}>{item.weight}</Text>
+            <Text style={styles.detail}>{item.material}</Text>
           </View>
            </TouchableOpacity>
       </View>

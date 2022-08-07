@@ -1,33 +1,34 @@
 export const categories = [
     {
         id: 1,
-        title: 'Harinas Puras',
+        title: 'Sara Tepes',
         color: '#B9CCE9',
     },
 
     {
             id: 2,
-            title: 'Harinas Integrales',
+            title: 'Adaline',
             color: '#C1EEFF',
         },
             
             {id: 3,
-            title: 'Harinas de Trigo',
+            title: 'Ross Tran',
             color: '#AB83CD',
         },
                 
                 {id: 4,
-                    title: 'Harinas de Maíz',
+                    title: 'Mark Ryden',
                     color: '#9751D5',
                 },
                     
                     {id: 5,
-                        title: 'Harinas de Centeno',
-                        color: '#896F71',
+                        title: 'Dolleetoile',
+                        color: '#967C72',
                     },
                         
                         {id: 6,
-                            title: 'Harinas de Cebada',
-                            color: '#7B6E59',
+                            title: 'Benjamin Lacombe',
+                            color: '#896F71',
                         },
                     ];
+                    

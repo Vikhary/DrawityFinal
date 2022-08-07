@@ -1,10 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import { styles } from "./styles";
 import { orders } from '../../data/orders';
 import { OrderItem } from '../../components';
+import { useDispatch, useSelector } from "react-redux";
+import { getOrders, deleteOrder } from "../../store/actions/order.action";
 
-const onDeleteOrder = (id) => {
+const OrderScreen = () => {
+  const dispatch = useDispatch();
+  const orders = useSelector((state) => state.order.items);
+  
+  const onDeleteOrder = (id) => {
     dispatch(deleteOrder(id));
   };
 
@@ -12,7 +18,10 @@ const onDeleteOrder = (id) => {
     <OrderItem item={item} onDelete={onDeleteOrder} />
   );
 
-const OrderScreen = () => {
+  useEffect(() => {
+    dispatch(getOrders());
+  }, []);
+
     return (
         <View style = {styles.container} >
       <View style={styles.orderList}>
@@ -21,6 +30,7 @@ const OrderScreen = () => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
+       
       </View>
        </View>
     );

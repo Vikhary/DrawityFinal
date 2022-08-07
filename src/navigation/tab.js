@@ -3,8 +3,9 @@ import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import IonicIcons from "@expo/vector-icons/Ionicons";
 import MainNavigator from "./main";
-import CartNavigator from "./cart";
-import OrdersNavigator from "./orders";
+import LikeNavigator from "./like";
+import ProfileNavigator from "./profile";
+
 import { colors } from "../constants/themes/colors";
 
 const BottomTabs = createBottomTabNavigator()
@@ -21,17 +22,17 @@ style={{
 const TabNavigator = () => {
     return (
         <BottomTabs.Navigator
-        initialRouteName="ShopTab"
+        initialRouteName="HomeTab"
         screenOptions={{
             headerShown:false,
       
         }}
         >
             <BottomTabs.Screen
-            name= "ShopTab"
+            name= "HomeTab"
             component={MainNavigator} 
             options={{
-                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Shop"),
+                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Home"),
                 tabBarIcon: ({ focused }) => (
                     <IonicIcons
                       name={focused ? "home" : "home-outline"}
@@ -42,13 +43,13 @@ const TabNavigator = () => {
             }} 
             />
             <BottomTabs.Screen
-            name= "CartTab"
-            component={CartNavigator} 
+            name= "ProfileTab"
+            component={ProfileNavigator} 
             options={{
-                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Cart"),
+                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Profile"),
                 tabBarIcon: ({ focused }) => (
                     <IonicIcons
-                      name={focused ? "cart" : "cart-outline"}
+                      name={focused ? "man" : "man-outline"}
                       size={20}
                       color={focused ? colors.primary : colors.secondary}
                     />
@@ -57,19 +58,21 @@ const TabNavigator = () => {
             />
 
 <BottomTabs.Screen
-            name= "OrdersTab"
-            component={OrdersNavigator} 
+            name= "LikesTab"
+            component={LikeNavigator} 
             options={{
-                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Orders"),
+                tabBarLabel:({ focused }) => LabelBottomTab(focused, "Likes"),
                 tabBarIcon: ({ focused }) => (
                     <IonicIcons
-                      name={focused ? "file-tray-full" : "file-tray-outline"}
+                      name={focused ? "heart-sharp" : "heart-outline"}
                       size={20}
                       color={focused ? colors.primary : colors.secondary}
                     />
                   ),
             }} 
             />
+
+
         </BottomTabs.Navigator>
 
     )

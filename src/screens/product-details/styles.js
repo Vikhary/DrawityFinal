@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions} from 'react-native';
+import { colors } from '../../constants/themes/colors';
 
 const { height, width } = Dimensions.get("window");
 
@@ -19,6 +20,13 @@ export const styles = StyleSheet.create({
     text: {
       fontFamily: "Lato-Bold",
       fontSize: 20,
+    },
+
+    button: {
+      flex:1,
+      borderRadius: 20,
+      color: colors.primary,
+      marginTop: 20,
     },
   });
   

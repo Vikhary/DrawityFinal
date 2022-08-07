@@ -2,10 +2,10 @@ export const cart = [
 
     {    id: 1,
         categoryId: 1,
-        name: 'Pan de yema',
-        description: 'clasico y delicioso pan de yema',
-        weight: '60gr',
-        price: 1.0,
+        name: 'April Girl',
+        description: 'Dibujo inspirado  estilo rococo',
+        material: 'Dibujo digital',
+        price: 20.00,
         quantity: 1,
     },
         
@@ -13,10 +13,10 @@ export const cart = [
   
         {id: 3,
             categoryId: 2,
-            name: 'Pan integral',
-            description: 'clasico y saludable pan integral',
-            weight: '70gr',
-            price: 1.8,
+            name: 'Rose',
+            description: 'Dibujo digital de Rose',
+            material: 'Dibujo digital',
+            price: 15.00,
             quantity: 1,
         },
         

@@ -27,6 +27,7 @@ const CategoriesScreen = ({ navigation }) => {
         data={categories}
         renderItem={renderItem} 
         keyExtractor={(item) => item.id}
+        numColumns={2}
       />
       </View>
     );
